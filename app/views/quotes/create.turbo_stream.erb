@@ -1,0 +1,14 @@
+<%#= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<!--equivalent-->
+<%#= turbo_stream.prepend "quotes" do %>
+  <%#= render partial: "quotes/quote", locals: { quote: @quote } %>
+<%# end %>
+<!--equivalent-->
+<%#= turbo_stream.prepend "quotes" do %>
+  <%#= render @quote %>
+<%# end %>
+<!--equivalent-->
+<%= turbo_stream.prepend "quotes", @quote %>
+<%= turbo_stream.update Quote.new, "" %>
+<%= render_turbo_stream_flash_messages %>
+<!--turbo_stream.replace-->
